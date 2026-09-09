@@ -1,279 +1,99 @@
-# AI Planner - Quick Start Guide
+# ⚡ NeuroPlan Quick Start Guide
 
-Get your AI-powered daily planner running in **10 minutes**! ⚡
-
-## Prerequisites Checklist
-- [ ] XAMPP installed and MySQL running
-- [ ] Python 3.9+ installed
-- [ ] Flutter SDK installed
-- [ ] VS Code or any code editor
-
-## 🚀 Setup Steps
-
-### 1. Database Setup (5 minutes)
-
-1. **Start XAMPP** and ensure MySQL is running
-2. Open **phpMyAdmin**: http://localhost/phpmyadmin
-3. Click **"New"** to create a database
-4. Name it: `ai_planner_db`
-5. Click on the database
-6. Go to **"SQL"** tab
-7. Copy entire contents of `database_setup.sql`
-8. Paste and click **"Go"**
-9. ✅ You should see **"11 tables created"**
-10. (Optional) Run `add_energy_level.sql` for energy tracking feature
-
-### 2. Backend Setup (2 minutes)
-
-**Option A - Automated (Recommended):**
-```bash
-# Double-click this file:
-setup_backend.bat
-```
-
-**Option B - Manual:**
-```bash
-cd backend
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-python main.py
-```
-
-✅ **Verify**: Open http://localhost:8000 
-- You should see: `{"app":"AI-Powered Daily Planner","version":"1.0.0","status":"running"}`
-- API Docs: http://localhost:8000/docs
-
-### 3. Frontend Setup (2 minutes)
-
-**Option A - Automated (Recommended):**
-```bash
-# Double-click this file:
-setup_frontend.bat
-```
-
-**Option B - Manual:**
-```bash
-cd frontend_app
-flutter pub get
-flutter run
-```
-
-✅ **Verify**: App should launch on your emulator/device
-
-## 📱 Test the App
-
-### Quick Test Flow
-
-1. **Launch App** → See beautiful splash screen with "AI Planner"
-2. **Click "Next"** → Go to login screen
-3. **Click "Sign Up"**
-4. **Fill registration form:**
-   - Full Name: Your Name
-   - Phone: +1234567890 (or any number)
-   - Password: Test@123 (min 8 chars)
-5. **Get verification code** (displayed on screen for development)
-6. **Enter code** → Automatically logged in
-7. **Explore the Dashboard!**
-
-### Test with Pre-created Account
-- **Phone**: `+1234567890`
-- **Password**: `Test@123`
-
-## ✨ Features to Try
-
-### 📋 Tasks
-1. Go to **Tasks** tab
-2. Click **"+"** button
-3. Enter task: "Buy groceries tomorrow"
-4. See task dashboard with stats
-5. Mark tasks as complete
-6. Swipe to delete
-
-### 🎯 Habits
-1. Go to **Habits** tab
-2. Click **"+"** button
-3. Create habit: "Morning exercise"
-4. Mark as complete daily
-5. Watch your streak grow!
-6. See motivational quotes
-
-### 🏆 Goals
-1. Go to **Goals** tab
-2. Click **"+"** button
-3. Enter goal: "Learn Flutter"
-4. AI breaks it into subtasks
-5. Check off subtasks
-6. Track progress
-
-### 😊 Mood Tracking
-1. Go to **Mood** tab
-2. Select your mood (happy, neutral, sad, stressed, excited)
-3. Rate your energy level
-4. View mood history
-5. Get AI insights
-
-### 📊 Insights
-1. Go to **Insights** tab
-2. View AI-generated recommendations
-3. See mood correlations
-4. Get productivity tips
-5. Refresh insights anytime
-
-### 📅 Calendar
-1. Go to **Calendar** tab
-2. See all tasks, habits, and goals
-3. Click on any date
-4. View events for that day
-
-### 👤 Profile
-1. Open drawer menu
-2. Click **Edit** icon
-3. Update your name
-4. Upload profile picture
-5. See changes across the app
-
-## ✅ Verify Everything Works
-
-### Backend Check
-- [ ] http://localhost:8000 shows app info
-- [ ] http://localhost:8000/docs shows Swagger UI
-- [ ] http://localhost:8000/health shows database connected
-- [ ] Backend terminal shows "Application startup complete"
-
-### Frontend Check
-- [ ] App launches without errors
-- [ ] Can navigate between all tabs
-- [ ] Login/signup works
-- [ ] Dashboard displays stats
-- [ ] Can create tasks, habits, goals
-- [ ] Profile picture upload works
-
-### Database Check
-- [ ] phpMyAdmin shows `ai_planner_db`
-- [ ] 11 tables visible (users, tasks, habits, goals, moods, etc.)
-- [ ] Test user exists in users table
-- [ ] Data appears when you create items
-
-## 🐛 Common Issues & Fixes
-
-### "Database connection error"
-**Fix**: Start MySQL in XAMPP Control Panel
-
-### "Port 8000 already in use"
-**Fix**: 
-```bash
-# Find and kill the process
-netstat -ano | findstr :8000
-taskkill /PID <process_id> /F
-```
-
-### "Module not found" (Backend)
-**Fix**: 
-```bash
-cd backend
-venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### "Flutter command not found"
-**Fix**: Install Flutter SDK and add to PATH
-- Download: https://flutter.dev
-- Add to PATH: `C:\flutter\bin`
-
-### "Package errors" (Frontend)
-**Fix**:
-```bash
-cd frontend_app
-flutter clean
-flutter pub get
-```
-
-### Profile picture not showing
-**Fix**: 
-- Check `backend/uploads/profile_pictures/` folder exists
-- Re-login to the app
-- Try uploading again
-
-### Insights not updating
-**Fix**: Click "Refresh Insights" button in Insights screen
-
-## 🎯 Next Steps
-
-1. ✅ **Explore all features** - Tasks, Habits, Goals, Mood, Insights, Calendar
-2. ✅ **Test AI features** - Create tasks with natural language
-3. ✅ **Upload profile picture** - Personalize your account
-4. ✅ **Track your mood** - Get AI-powered insights
-5. ✅ **Set goals** - Let AI break them down
-6. 📖 **Read README.md** - Full feature documentation
-7. 🔧 **Check API docs** - http://localhost:8000/docs
-
-## 📊 What You Get
-
-### Core Features
-- ✅ Task management with dashboard
-- ✅ Habit tracking with streaks
-- ✅ Goal setting with AI decomposition
-- ✅ Mood & energy logging
-- ✅ AI-powered insights
-- ✅ Calendar view
-- ✅ Profile management
-- ✅ Profile picture upload
-
-### AI Features
-- ✅ Natural language task parsing
-- ✅ Smart goal decomposition
-- ✅ Mood pattern analysis
-- ✅ Personalized recommendations
-- ✅ Productivity insights
-
-### UI/UX
-- ✅ Modern gradient design
-- ✅ Smooth animations
-- ✅ Responsive layout
-- ✅ Intuitive navigation
-- ✅ Beautiful dashboards
-
-## 📞 Support
-
-### Getting Help
-- **Backend logs**: Check terminal running `python main.py`
-- **Frontend logs**: Check terminal running `flutter run`
-- **Database**: Check phpMyAdmin at http://localhost/phpmyadmin
-- **API docs**: http://localhost:8000/docs
-- **Full documentation**: See README.md
-
-### Useful Commands
-
-**Backend:**
-```bash
-cd backend
-venv\Scripts\activate
-python main.py
-```
-
-**Frontend:**
-```bash
-cd frontend_app
-flutter run
-flutter clean  # If issues occur
-flutter pub get
-```
-
-**Database:**
-- Access: http://localhost/phpmyadmin
-- Database: `ai_planner_db`
-- User: `root`
-- Password: (empty)
-
-## 🎉 You're All Set!
-
-Your **AI Planner** is now running! Start organizing your life with AI-powered insights.
+This guide provides streamlined instructions for bootstrapping the **NeuroPlan** microservice backend, database persistence layer, and Flutter cross-platform client locally for development and evaluation.
 
 ---
 
-**Total setup time: ~10 minutes** ⚡
+## 📋 Prerequisites Checklist
 
-**Tech Stack**: Flutter • FastAPI • MySQL • Google Gemini AI
+Ensure the following environments are installed:
+- **Python 3.10+**: [python.org](https://www.python.org/)
+- **Flutter SDK 3.0+**: [flutter.dev](https://flutter.dev/)
+- **MySQL 8.0+** (or XAMPP/Docker): [mysql.com](https://www.mysql.com/)
+- **Git**: [git-scm.com](https://git-scm.com/)
 
-**Version**: 1.0.0
+---
+
+## 🛠️ Step-by-Step Initialization
+
+### Step 1: Database Provisioning
+
+1. Start your local MySQL service (via XAMPP Control Panel, native service, or Docker).
+2. Create and import the normalized relational schema:
+
+```bash
+# Log in to MySQL and provision the database
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS ai_planner_db;"
+
+# Import the Third Normal Form (3NF) relational tables
+mysql -u root -p ai_planner_db < database_setup.sql
+```
+
+*(Alternatively, use phpMyAdmin: create `ai_planner_db` and import `database_setup.sql` via the Import tab).*
+
+---
+
+### Step 2: Backend Microservice Launch (FastAPI)
+
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
+
+2. Create and activate a Python virtual environment:
+   ```bash
+   # Windows (PowerShell)
+   python -m venv venv
+   .\venv\Scripts\activate
+
+   # macOS / Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install production dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Launch the asynchronous ASGI server:
+   ```bash
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+   ```
+
+✅ **Verification**:
+- API Health Status: [http://localhost:8000/](http://localhost:8000/)
+- Interactive OpenAPI Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+### Step 3: Flutter Cross-Platform Client Launch
+
+1. In a new terminal, navigate to `frontend_app`:
+   ```bash
+   cd frontend_app
+   ```
+
+2. Retrieve Flutter packages:
+   ```bash
+   flutter pub get
+   ```
+
+3. Launch the application:
+   ```bash
+   # Web browser (Chrome)
+   flutter run -d chrome
+
+   # Connected Android / iOS device or emulator
+   flutter run
+   ```
+
+---
+
+## 🧪 Verification & Default Credentials
+
+During development and testing, you can use the built-in test account:
+- **Phone Number**: `+1234567890`
+- **Password**: `Test@123`
+
+To create a new account, use the **Sign Up** interface. The local development environment auto-displays verification tokens on-screen for seamless onboarding.
