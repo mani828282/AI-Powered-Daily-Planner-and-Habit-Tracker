@@ -1,0 +1,50 @@
+# Root .gitignore
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Virtual Environments
+env/
+venv/
+.venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+import_log.txt
+git_diff.txt
+
+# Flutter app build and logs
+frontend_app/build/
+frontend_app/.flutter-plugins
+frontend_app/.flutter-plugins-dependencies
+frontend_app/.dart_tool/
+frontend_app/build_log*.txt
+frontend_app/analysis*.txt
+frontend_app/dart_analysis.txt
+frontend_app/*_analysis*.py
+frontend_app/*_analysis*.txt
+frontend_app/fix_*.py
+frontend_app/read_dart_analysis.py
+frontend_app/find_const_opportunities.py
